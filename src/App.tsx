@@ -5,26 +5,45 @@ import React, { Component } from 'react';
 import Icon, { Stack } from '@mdi/react';
 import { mdiAccount } from '@mdi/js';
 import Button from '@material-ui/core/Button';
-import { Typography } from '@material-ui/core';
+import { Typography, Grid, Paper, makeStyles, Theme, createStyles, GridList, GridListTile, GridListTileBar, IconButton } from '@material-ui/core';
 
-class App extends Component<{}> {
-  render() {
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      overflow: 'hidden',
+      backgroundColor: theme.palette.background.paper,
+    },
+    gridList: {
+      flexWrap: 'nowrap',
+      // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+      transform: 'translateZ(0)',
+    },
+    title: {
+      color: theme.palette.primary.light,
+    },
+    titleBar: {
+      background:
+        'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+    },
+  }),
+);
+
+const App: React.FunctionComponent<{}> = ({ children }) => {
+  const classes = useStyles();
+
     return (
       <Layout>
-        <div className="test">
 
-          <Icon path={mdiAccount} size="48px" />
-        </div>
-        <Button variant="contained" color="primary">
-          Hello World
-              </Button>
-        <Typography variant="subtitle1" gutterBottom>
-          subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
-          <div className="main">ssd</div>
-        </Typography>
+
+        
+   
       </Layout>
     );
-  }
+  
 }
 
 export default App;

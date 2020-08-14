@@ -4,5 +4,4 @@ import Layout from './default';
 
 test('renders layout', () => {
   const { getByText } = render(<Layout />);
-  debugger
 });
