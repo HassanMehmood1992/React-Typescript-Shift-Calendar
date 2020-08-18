@@ -6,7 +6,7 @@ import React, { Component } from "react";
 import Icon, { Stack } from "@mdi/react";
 import { mdiAccount, mdiCheckboxBlankCircle } from "@mdi/js";
 import Button from "@material-ui/core/Button";
-import MyFirstGrid from './components/GridLayout'
+import MyFirstGrid from "./components/GridLayout";
 import {
   Typography,
   Grid,
@@ -129,46 +129,46 @@ const App: React.FunctionComponent<{}> = ({ children }) => {
           </Grid>
           <Grid item md={10}>
             <Card variant="outlined" square>
-              <Box
-                display="flex"
-                flexWrap="nowrap"
-                className={classes.container}
-              >
-                <Box className={classes.weekDay}>
-                  <Box textAlign="center">
-                    <Card variant="outlined" square>
-                      Monday
-                    </Card>
+              <Grid container   className={classes.container} >
+                <Box
+                  display="flex"
+                  flexWrap="nowrap"
+                
+                >
+                  <Box display="flex" flexDirection="row" flexWrap="nowrap">
+                    <Box className={classes.weekDay}>
+                      <Box textAlign="center">
+                        <Card variant="outlined" square>
+                          Monday
+                        </Card>
+                      </Box>
+                    </Box>
+                    <Box textAlign="center" className={classes.weekDay}>
+                      Tuesday
+                    </Box>
+                    <Box textAlign="center" className={classes.weekDay}>
+                      Wednesday
+                    </Box>
+                    <Box textAlign="center" className={classes.weekDay}>
+                      Thursday
+                    </Box>
+                    <Box textAlign="center" className={classes.weekDay}>
+                      Friday
+                    </Box>
+                    <Box textAlign="center" className={classes.weekDay}>
+                      Saturday
+                    </Box>
+                    <Box textAlign="center" className={classes.weekDay}>
+                      Sunday
+                    </Box>
                   </Box>
                 </Box>
-                <Box textAlign="center" className={classes.weekDay}>
-                  Tuesday
-                </Box>
-                <Box textAlign="center" className={classes.weekDay}>
-                  Wednesday
-                </Box>
-                <Box textAlign="center" className={classes.weekDay}>
-                  Thursday
-                </Box>
-                <Box textAlign="center" className={classes.weekDay}>
-                  Friday
-                </Box>
-                <Box textAlign="center" className={classes.weekDay}>
-                  Saturday
-                </Box>
-                <Box textAlign="center" className={classes.weekDay}>
-                  Sunday
-                </Box>
-                <Box textAlign="center" className={classes.weekDay}>
-                  Monday
-                </Box>
-              </Box>
-
-
+                <div  >
+                <MyFirstGrid></MyFirstGrid>
+                </div>
+              </Grid>
               {/* grid layout comes here  */}
-              <MyFirstGrid></MyFirstGrid>
             </Card>
-
           </Grid>
         </Grid>
       </Box>

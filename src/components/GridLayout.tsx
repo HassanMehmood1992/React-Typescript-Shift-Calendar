@@ -4,9 +4,13 @@ import React from "react";
 const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
   // layout is an array of objects, see the demo for more complete usage
   const layout = [
-    { i: "a", x: 0, y: 0, w: 1, h: 2, static: true },
-    { i: "b", x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
-    { i: "c", x: 4, y: 0, w: 1, h: 2 },
+    { i: "monday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "tuesday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "wednesday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "thursday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "friday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "saturday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "sunday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
   ];
   return (
     <GridLayout
@@ -16,9 +20,13 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
       rowHeight={30}
       width={2400}
     >
-      <div key="a">a</div>
-      <div key="b">b</div>
-      <div key="c">c</div>
+      <div key="monday">monday</div>
+      <div key="tuesday">tuesday</div>
+      <div key="wednesday">wednesday</div>
+      <div key="thursday">thursday</div>
+      <div key="friday">friday</div>
+      <div key="saturday">saturday</div>
+      <div key="sunday">sunday</div>
     </GridLayout>
   );
 };
