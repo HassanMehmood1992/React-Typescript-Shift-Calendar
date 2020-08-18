@@ -94,19 +94,13 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
     { i: "schedule2", x: 1, y: 1, w: 3, h: 4, minW: 1, maxW: 3 },
     { i: "schedule3", x: 1, y: 1, w: 3, h: 4, minW: 1, maxW: 3 },
     { i: "schedule4", x: 1, y: 1, w: 3, h: 4, minW: 1, maxW: 3 },
-
-    // { i: "tuesday", x: 3, y: 0, w: 2, h: 3, minW: 1, maxW: 3 },
-    // { i: "wednesday", x: 6, y: 0, w: 3, h: 3, minW: 1, maxW: 3 },
-    // { i: "thursday", x: 9, y: 0, w: 3, h: 3, minW: 1, maxW: 3 },
-    // { i: "friday", x: 12, y: 0, w: 3, h: 3, minW: 1, maxW: 3 },
-    // { i: "saturday", x: 15, y: 0, w: 3, h: 3, minW: 1, maxW: 3 },
-    // { i: "sunday", x: 18, y: 0, w: 3, h: 3, minW: 1, maxW: 3 },
   ];
   return (
     <GridLayout
       className="layout"
       layout={layout}
       cols={22}
+      verticalCompact={false}
       rowHeight={30}
       width={4200}
     >
