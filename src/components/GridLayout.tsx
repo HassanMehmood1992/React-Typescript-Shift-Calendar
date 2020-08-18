@@ -5,12 +5,12 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
   // layout is an array of objects, see the demo for more complete usage
   const layout = [
     { i: "monday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
-    { i: "tuesday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
-    { i: "wednesday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
-    { i: "thursday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
-    { i: "friday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
-    { i: "saturday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
-    { i: "sunday", x: 0, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "tuesday", x: 1, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "wednesday", x:2, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "thursday", x: 3, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "friday", x: 4, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "saturday", x: 5, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
+    { i: "sunday", x: 6, y: 0, w: 1, h: 2, minW: 1, maxW: 3 },
   ];
   return (
     <GridLayout

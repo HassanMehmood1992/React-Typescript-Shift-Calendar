@@ -144,22 +144,46 @@ const App: React.FunctionComponent<{}> = ({ children }) => {
                       </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                      Tuesday
+                    <Box textAlign="center">
+                        <Card variant="outlined" square>
+                          Tuesday
+                        </Card>
+                      </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                      Wednesday
+                    <Box textAlign="center">
+                        <Card variant="outlined" square>
+                          Wednesday
+                        </Card>
+                      </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                      Thursday
+                    <Box textAlign="center">
+                        <Card variant="outlined" square>
+                          Thursday
+                        </Card>
+                      </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                      Friday
+                    <Box textAlign="center">
+                        <Card variant="outlined" square>
+                          Friday
+                        </Card>
+                      </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                      Saturday
+                    <Box textAlign="center">
+                        <Card variant="outlined" square>
+                          Saturday
+                        </Card>
+                      </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                      Sunday
+                    <Box textAlign="center">
+                        <Card variant="outlined" square>
+                          Sunday
+                        </Card>
+                      </Box>
                     </Box>
                   </Box>
                 </Box>
