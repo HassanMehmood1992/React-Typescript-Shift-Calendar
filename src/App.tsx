@@ -129,12 +129,8 @@ const App: React.FunctionComponent<{}> = ({ children }) => {
           </Grid>
           <Grid item md={10}>
             <Card variant="outlined" square>
-              <Grid container   className={classes.container} >
-                <Box
-                  display="flex"
-                  flexWrap="nowrap"
-                
-                >
+              <Grid container className={classes.container}>
+                <Box display="flex" flexWrap="nowrap">
                   <Box display="flex" flexDirection="row" flexWrap="nowrap">
                     <Box className={classes.weekDay}>
                       <Box textAlign="center">
@@ -144,51 +140,52 @@ const App: React.FunctionComponent<{}> = ({ children }) => {
                       </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                    <Box textAlign="center">
+                      <Box textAlign="center">
                         <Card variant="outlined" square>
                           Tuesday
                         </Card>
                       </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                    <Box textAlign="center">
+                      <Box textAlign="center">
                         <Card variant="outlined" square>
                           Wednesday
                         </Card>
                       </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                    <Box textAlign="center">
+                      <Box textAlign="center">
                         <Card variant="outlined" square>
                           Thursday
                         </Card>
                       </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                    <Box textAlign="center">
+                      <Box textAlign="center">
                         <Card variant="outlined" square>
                           Friday
                         </Card>
                       </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                    <Box textAlign="center">
+                      <Box textAlign="center">
                         <Card variant="outlined" square>
                           Saturday
                         </Card>
                       </Box>
                     </Box>
                     <Box textAlign="center" className={classes.weekDay}>
-                    <Box textAlign="center">
+                      <Box textAlign="center">
                         <Card variant="outlined" square>
                           Sunday
                         </Card>
                       </Box>
                     </Box>
+                  
                   </Box>
                 </Box>
-                <div  >
-                <MyFirstGrid></MyFirstGrid>
+                <div>
+                  <MyFirstGrid></MyFirstGrid>
                 </div>
               </Grid>
               {/* grid layout comes here  */}
