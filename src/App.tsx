@@ -1,10 +1,12 @@
 import "./App.scss";
-
+import "react-grid-layout/css/styles.css";
+import "react-resizable/css/styles.css";
 import Layout from "./layouts/default";
 import React, { Component } from "react";
 import Icon, { Stack } from "@mdi/react";
 import { mdiAccount, mdiCheckboxBlankCircle } from "@mdi/js";
 import Button from "@material-ui/core/Button";
+import MyFirstGrid from './components/GridLayout'
 import {
   Typography,
   Grid,
@@ -138,43 +140,6 @@ const App: React.FunctionComponent<{}> = ({ children }) => {
                       Monday
                     </Card>
                   </Box>
-                  {[1, 2, 3, 4].map((item) => {
-                    return (
-                      <Card variant="outlined" square>
-                        <CardContent className="p-0">
-                          <Box display="flex" alignItems="center">
-                            <Box width="70%">
-                              <Typography color="textPrimary" gutterBottom>
-                                Machine 1
-                              </Typography>
-                            </Box>
-                            <Box flexGrow="1"></Box>
-                            <Box width="30%" flexShrink={0} textAlign="right">
-                              <Icon
-                                path={mdiCheckboxBlankCircle}
-                                size="15px"
-                                className={classes.active}
-                              />
-                            </Box>
-                          </Box>
-
-                          <Box display="flex">
-                            <FormControl className={classes.formControl}>
-                              <InputLabel>Schedule</InputLabel>
-                              <Select value={age} onChange={handleChange}>
-                                <MenuItem value={1}>1</MenuItem>
-                                <MenuItem value={2}>2</MenuItem>
-                                <MenuItem value={3}>3</MenuItem>
-                              </Select>
-                            </FormControl>
-                          </Box>
-                        </CardContent>
-                        <CardActions>
-                          <Button size="small">Details</Button>
-                        </CardActions>
-                      </Card>
-                    );
-                  })}
                 </Box>
                 <Box textAlign="center" className={classes.weekDay}>
                   Tuesday
@@ -198,7 +163,12 @@ const App: React.FunctionComponent<{}> = ({ children }) => {
                   Monday
                 </Box>
               </Box>
+
+
+              {/* grid layout comes here  */}
+              <MyFirstGrid></MyFirstGrid>
             </Card>
+
           </Grid>
         </Grid>
       </Box>
