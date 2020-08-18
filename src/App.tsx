@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     container: {
       overflowX: "scroll",
+      height: "90vh",
     },
   })
 );
@@ -83,7 +84,7 @@ const App: React.FunctionComponent<{}> = ({ children }) => {
     <Layout>
       <Box m="50px">
         <Grid container>
-          <Grid item md={2}>
+          {/* <Grid item md={2}>
             <Box textAlign="center">
               <Card variant="outlined" square>
                 Days
@@ -126,69 +127,15 @@ const App: React.FunctionComponent<{}> = ({ children }) => {
                 </Card>
               );
             })}
-          </Grid>
-          <Grid item md={10}>
+          </Grid> */}
+          <Grid item md={12}>
             <Card variant="outlined" square>
               <Grid container className={classes.container}>
-                <Box display="flex" flexWrap="nowrap">
-                  <Box display="flex" flexDirection="row" flexWrap="nowrap">
-                    <Box className={classes.weekDay}>
-                      <Box textAlign="center">
-                        <Card variant="outlined" square>
-                          Monday
-                        </Card>
-                      </Box>
-                    </Box>
-                    <Box textAlign="center" className={classes.weekDay}>
-                      <Box textAlign="center">
-                        <Card variant="outlined" square>
-                          Tuesday
-                        </Card>
-                      </Box>
-                    </Box>
-                    <Box textAlign="center" className={classes.weekDay}>
-                      <Box textAlign="center">
-                        <Card variant="outlined" square>
-                          Wednesday
-                        </Card>
-                      </Box>
-                    </Box>
-                    <Box textAlign="center" className={classes.weekDay}>
-                      <Box textAlign="center">
-                        <Card variant="outlined" square>
-                          Thursday
-                        </Card>
-                      </Box>
-                    </Box>
-                    <Box textAlign="center" className={classes.weekDay}>
-                      <Box textAlign="center">
-                        <Card variant="outlined" square>
-                          Friday
-                        </Card>
-                      </Box>
-                    </Box>
-                    <Box textAlign="center" className={classes.weekDay}>
-                      <Box textAlign="center">
-                        <Card variant="outlined" square>
-                          Saturday
-                        </Card>
-                      </Box>
-                    </Box>
-                    <Box textAlign="center" className={classes.weekDay}>
-                      <Box textAlign="center">
-                        <Card variant="outlined" square>
-                          Sunday
-                        </Card>
-                      </Box>
-                    </Box>
-                  
-                  </Box>
-                </Box>
-                <div>
+               
+                <div style={{ position: "static" }}>
                   <MyFirstGrid></MyFirstGrid>
                 </div>
               </Grid>
-              {/* grid layout comes here  */}
             </Card>
           </Grid>
         </Grid>

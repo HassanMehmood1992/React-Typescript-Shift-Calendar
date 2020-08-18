@@ -1,32 +1,301 @@
 import GridLayout from "react-grid-layout";
 import React from "react";
+import {
+  Box,
+  Card,
+  makeStyles,
+  Theme,
+  createStyles,
+  CardContent,
+  Typography,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  CardActions,
+  Button,
+} from "@material-ui/core";
+import classes from "*.module.css";
+import { green } from "@material-ui/core/colors";
+import Icon, { Stack } from "@mdi/react";
+import { mdiAccount, mdiCheckboxBlankCircle } from "@mdi/js";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    gridBorder: {
+      border: "1px solid red;",
+      height: "100%",
+    },
+    root: {
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "space-around",
+      overflow: "hidden",
+      backgroundColor: theme.palette.background.paper,
+    },
+
+    gridList: {
+      flexWrap: "nowrap",
+      // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+      transform: "translateZ(0)",
+    },
+    title: {
+      color: theme.palette.primary.light,
+    },
+    titleBar: {
+      background:
+        "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)",
+    },
+
+    active: {
+      color: green.A700,
+    },
+    inactive: {
+      color: theme.palette.warning.main,
+    },
+    error: {
+      color: theme.palette.error.main,
+    },
+    formControl: {
+      minWidth: 120,
+    },
+    weekDay: {
+      minWidth: "600px",
+    },
+    container: {
+      overflowX: "scroll",
+      height: "90vh",
+    },
+  })
+);
 
 const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
   // layout is an array of objects, see the demo for more complete usage
+  const classes = useStyles();
+  const [age, setAge] = React.useState<number>();
+  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    setAge(event.target.value as number);
+  };
   const layout = [
-    { i: "monday", x: 0, y: 0, w: 3, h: 2, minW: 1, maxW: 3 },
-    { i: "tuesday", x: 3, y: 0, w: 2, h: 2, minW: 1, maxW: 3 },
-    { i: "wednesday", x:6, y: 0, w: 3, h: 2, minW: 1, maxW: 3 },
-    { i: "thursday", x: 9, y: 0, w: 3, h: 2, minW: 1, maxW: 3 },
-    { i: "friday", x: 12, y: 0, w: 3, h: 2, minW: 1, maxW: 3 },
-    { i: "saturday", x: 15, y: 0, w: 3, h: 2, minW: 1, maxW: 3 },
-    { i: "sunday", x: 18, y: 0, w: 3, h: 2, minW: 1, maxW: 3 },
+    { i: "machine1", x: 0, y: 1, w: 1, h: 4, minW: 1, maxW: 3, static: true },
+    { i: "machine2", x: 0, y: 5, w: 1, h: 4, minW: 1, maxW: 3, static: true },
+    { i: "machine3", x: 0, y: 9, w: 1, h: 4, minW: 1, maxW: 3, static: true },
+    { i: "machine4", x: 0, y: 13, w: 1, h: 4, minW: 1, maxW: 3, static: true },
+
+    { i: "day1", x: 1, y: 0, w: 3, h: 1, minW: 1, maxW: 3, static: true },
+    { i: "day2", x: 4, y: 0, w: 3, h: 1, minW: 1, maxW: 3, static: true },
+    { i: "day3", x: 7, y: 0, w: 3, h: 1, minW: 1, maxW: 3, static: true },
+    { i: "day4", x: 10, y: 0, w: 3, h: 1, minW: 1, maxW: 3, static: true },
+    { i: "day5", x: 13, y: 0, w: 3, h: 1, minW: 1, maxW: 3, static: true },
+    { i: "day6", x: 16, y: 0, w: 3, h: 1, minW: 1, maxW: 3, static: true },
+    { i: "day7", x: 19, y: 0, w: 3, h: 1, minW: 1, maxW: 3, static: true },
+
+    { i: "schedule1", x: 1, y: 1, w: 3, h: 4, minW: 1, maxW: 3 },
+    { i: "schedule2", x: 1, y: 1, w: 3, h: 4, minW: 1, maxW: 3 },
+    { i: "schedule3", x: 1, y: 1, w: 3, h: 4, minW: 1, maxW: 3 },
+    { i: "schedule4", x: 1, y: 1, w: 3, h: 4, minW: 1, maxW: 3 },
+
+    // { i: "tuesday", x: 3, y: 0, w: 2, h: 3, minW: 1, maxW: 3 },
+    // { i: "wednesday", x: 6, y: 0, w: 3, h: 3, minW: 1, maxW: 3 },
+    // { i: "thursday", x: 9, y: 0, w: 3, h: 3, minW: 1, maxW: 3 },
+    // { i: "friday", x: 12, y: 0, w: 3, h: 3, minW: 1, maxW: 3 },
+    // { i: "saturday", x: 15, y: 0, w: 3, h: 3, minW: 1, maxW: 3 },
+    // { i: "sunday", x: 18, y: 0, w: 3, h: 3, minW: 1, maxW: 3 },
   ];
   return (
     <GridLayout
       className="layout"
       layout={layout}
-      cols={21}
+      cols={22}
       rowHeight={30}
       width={4200}
     >
-      <div key="monday">monday</div>
-      <div key="tuesday">tuesday</div>
-      <div key="wednesday">wednesday</div>
-      <div key="thursday">thursday</div>
-      <div key="friday">friday</div>
-      <div key="saturday">saturday</div>
-      <div key="sunday">sunday</div>
+      <div key="machine1">
+        <Card variant="outlined" square>
+          <CardContent className="pa-0">
+            <Box display="flex" alignItems="center">
+              <Box width="70%">
+                <Typography color="textPrimary" gutterBottom>
+                  Machine 1
+                </Typography>
+              </Box>
+              <Box flexGrow="1"></Box>
+              <Box width="30%" flexShrink={0} textAlign="right">
+                <Icon
+                  path={mdiCheckboxBlankCircle}
+                  size="15px"
+                  className={classes.active}
+                />
+              </Box>
+            </Box>
+
+            <Box display="flex">
+              <FormControl className={classes.formControl}>
+                <InputLabel>Schedule</InputLabel>
+                <Select value={age} onChange={handleChange}>
+                  <MenuItem value={1}>1</MenuItem>
+                  <MenuItem value={2}>2</MenuItem>
+                  <MenuItem value={3}>3</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Details</Button>
+          </CardActions>
+        </Card>
+      </div>
+      <div key="machine2" style={{ background: "blue" }}>
+        <Card variant="outlined" square>
+          <CardContent className="p-0">
+            <Box display="flex" alignItems="center">
+              <Box width="70%">
+                <Typography color="textPrimary" gutterBottom>
+                  machine2
+                </Typography>
+              </Box>
+              <Box flexGrow="1"></Box>
+              <Box width="30%" flexShrink={0} textAlign="right">
+                <Icon
+                  path={mdiCheckboxBlankCircle}
+                  size="15px"
+                  className={classes.active}
+                />
+              </Box>
+            </Box>
+
+            <Box display="flex">
+              <FormControl className={classes.formControl}>
+                <InputLabel>Schedule</InputLabel>
+                <Select value={age} onChange={handleChange}>
+                  <MenuItem value={1}>1</MenuItem>
+                  <MenuItem value={2}>2</MenuItem>
+                  <MenuItem value={3}>3</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Details</Button>
+          </CardActions>
+        </Card>
+      </div>
+      <div key="machine3" style={{ background: "green" }}>
+        <Card variant="outlined" square>
+          <CardContent className="p-0">
+            <Box display="flex" alignItems="center">
+              <Box width="70%">
+                <Typography color="textPrimary" gutterBottom>
+                  machine3
+                </Typography>
+              </Box>
+              <Box flexGrow="1"></Box>
+              <Box width="30%" flexShrink={0} textAlign="right">
+                <Icon
+                  path={mdiCheckboxBlankCircle}
+                  size="15px"
+                  className={classes.active}
+                />
+              </Box>
+            </Box>
+
+            <Box display="flex">
+              <FormControl className={classes.formControl}>
+                <InputLabel>Schedule</InputLabel>
+                <Select value={age} onChange={handleChange}>
+                  <MenuItem value={1}>1</MenuItem>
+                  <MenuItem value={2}>2</MenuItem>
+                  <MenuItem value={3}>3</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Details</Button>
+          </CardActions>
+        </Card>
+      </div>
+      <div key="machine4" style={{ background: "orange" }}>
+        <Card variant="outlined" square>
+          <CardContent className="p-0">
+            <Box display="flex" alignItems="center">
+              <Box width="70%">
+                <Typography color="textPrimary" gutterBottom>
+                  machine4
+                </Typography>
+              </Box>
+              <Box flexGrow="1"></Box>
+              <Box width="30%" flexShrink={0} textAlign="right">
+                <Icon
+                  path={mdiCheckboxBlankCircle}
+                  size="15px"
+                  className={classes.active}
+                />
+              </Box>
+            </Box>
+
+            <Box display="flex">
+              <FormControl className={classes.formControl}>
+                <InputLabel>Schedule</InputLabel>
+                <Select value={age} onChange={handleChange}>
+                  <MenuItem value={1}>1</MenuItem>
+                  <MenuItem value={2}>2</MenuItem>
+                  <MenuItem value={3}>3</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Details</Button>
+          </CardActions>
+        </Card>
+      </div>
+
+      <div key="day1" style={{ background: "blue" }}>
+        pazartesi
+      </div>
+      <div key="day2" style={{ background: "orange" }}>
+        sahle
+      </div>
+      <div key="day3" style={{ background: "purple" }}>
+        carsemba
+      </div>
+      <div key="day4" style={{ background: "yellow" }}>
+        persambe
+      </div>
+      <div key="day5" style={{ background: "aqua" }}>
+        cuma
+      </div>
+      <div key="day6" style={{ background: "brown" }}>
+        cumartesi
+      </div>
+      <div key="day7" style={{ background: "grey" }}>
+        pazar
+      </div>
+
+      <div key="schedule1">
+        <Box textAlign="center" className={classes.gridBorder}>
+          Schedule for machine 1
+        </Box>
+      </div>
+      <div key="schedule2">
+        {" "}
+        <Box textAlign="center" className={classes.gridBorder}>
+          Schedule for machine 2
+        </Box>
+      </div>
+      <div key="schedule3">
+        {" "}
+        <Box textAlign="center" className={classes.gridBorder}>
+          Schedule for machine 3
+        </Box>
+      </div>
+      <div key="schedule4">
+        {" "}
+        <Box textAlign="center" className={classes.gridBorder}>
+          Schedule for machine 4
+        </Box>
+      </div>
     </GridLayout>
   );
 };
