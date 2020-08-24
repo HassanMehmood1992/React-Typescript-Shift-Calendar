@@ -1,6 +1,7 @@
 import "./App.scss";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from "./layouts/default";
 import React, { Component } from "react";
 import Icon, { Stack } from "@mdi/react";

@@ -1,5 +1,6 @@
 import GridLayout from "react-grid-layout";
 import React from "react";
+import ProgressBar from "react-bootstrap/ProgressBar";
 import {
   Box,
   Card,
@@ -100,6 +101,7 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
       className="layout"
       layout={layout}
       cols={22}
+      preventCollision={true}
       verticalCompact={false}
       rowHeight={30}
       width={4200}
@@ -269,7 +271,24 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
 
       <div key="schedule1">
         <Box textAlign="center" className={classes.gridBorder}>
-          Schedule for machine 1
+          <div>
+            <ProgressBar>
+              <ProgressBar
+                striped
+                variant="warning"
+                now={20}
+                label={`${2} hr`}
+                key={1}
+              />
+              <ProgressBar
+                striped
+                variant="success"
+                now={35}
+                label={`${17} hr`}
+                key={2}
+              />
+            </ProgressBar>
+          </div>
         </Box>
       </div>
       <div key="schedule2">
