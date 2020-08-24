@@ -141,13 +141,14 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
           </CardActions>
         </Card>
       </div>
-      <div key="machine2" style={{ background: "blue" }}>
+
+      <div key="machine2">
         <Card variant="outlined" square>
-          <CardContent className="p-0">
+          <CardContent className="pa-0">
             <Box display="flex" alignItems="center">
               <Box width="70%">
                 <Typography color="textPrimary" gutterBottom>
-                  machine2
+                  Machine 2
                 </Typography>
               </Box>
               <Box flexGrow="1"></Box>
@@ -176,13 +177,14 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
           </CardActions>
         </Card>
       </div>
-      <div key="machine3" style={{ background: "green" }}>
+
+      <div key="machine3">
         <Card variant="outlined" square>
-          <CardContent className="p-0">
+          <CardContent className="pa-0">
             <Box display="flex" alignItems="center">
               <Box width="70%">
                 <Typography color="textPrimary" gutterBottom>
-                  machine3
+                  Machine 3
                 </Typography>
               </Box>
               <Box flexGrow="1"></Box>
@@ -211,13 +213,14 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
           </CardActions>
         </Card>
       </div>
-      <div key="machine4" style={{ background: "orange" }}>
+
+      <div key="machine4">
         <Card variant="outlined" square>
-          <CardContent className="p-0">
+          <CardContent className="pa-0">
             <Box display="flex" alignItems="center">
               <Box width="70%">
                 <Typography color="textPrimary" gutterBottom>
-                  machine4
+                  Machine 4
                 </Typography>
               </Box>
               <Box flexGrow="1"></Box>
@@ -246,6 +249,7 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
           </CardActions>
         </Card>
       </div>
+
 
       <div key="day1" style={{ background: "blue" }}>
         pazartesi
@@ -284,7 +288,7 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
                 striped
                 variant="success"
                 now={35}
-                label={`${17} hr`}
+                label={`${17}`}
                 key={2}
               />
             </ProgressBar>
