@@ -19,7 +19,7 @@ import {
 import classes from "*.module.css";
 import { green } from "@material-ui/core/colors";
 import Icon, { Stack } from "@mdi/react";
-import { mdiAccount, mdiCheckboxBlankCircle } from "@mdi/js";
+import { mdiAccount, mdiCheckboxBlankCircle, mdiCheck } from "@mdi/js";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -250,7 +250,6 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
         </Card>
       </div>
 
-
       <div key="day1" style={{ background: "blue" }}>
         pazartesi
       </div>
@@ -275,6 +274,7 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
 
       <div key="schedule1">
         <Box textAlign="center" className={classes.gridBorder}>
+          <div style={{ paddingBottom: "10px" }}>Machine 1_XXX</div>
           <div>
             <ProgressBar>
               <ProgressBar
@@ -287,12 +287,23 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
               <ProgressBar
                 striped
                 variant="success"
-                now={35}
-                label={`${17}`}
+                now={40}
+                label={`${17} hr`}
+                key={2}
+              />
+              <ProgressBar
+                style={{ background: "#cacaca" }}
+                now={40}
+                label={`${6} hr`}
                 key={2}
               />
             </ProgressBar>
           </div>
+          <div style={{ padding: "10px 10px" }}>
+            Material Available:{" "}
+            <Icon path={mdiCheck} size="15px" className={classes.active} />
+          </div>
+          <div>Auftragsmenge produced: 195</div>
         </Box>
       </div>
       <div key="schedule2">
