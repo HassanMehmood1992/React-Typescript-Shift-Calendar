@@ -307,21 +307,105 @@ const MyFirstGrid: React.FunctionComponent<{}> = ({ children }) => {
         </Box>
       </div>
       <div key="schedule2">
-        {" "}
         <Box textAlign="center" className={classes.gridBorder}>
-          Schedule for machine 2
+          <div style={{ paddingBottom: "10px" }}>Machine 2_XXX</div>
+          <div>
+            <ProgressBar>
+              <ProgressBar
+                striped
+                variant="warning"
+                now={20}
+                label={`${2} hr`}
+                key={1}
+              />
+              <ProgressBar
+                striped
+                variant="success"
+                now={40}
+                label={`${17} hr`}
+                key={2}
+              />
+              <ProgressBar
+                style={{ background: "#cacaca" }}
+                now={40}
+                label={`${6} hr`}
+                key={2}
+              />
+            </ProgressBar>
+          </div>
+          <div style={{ padding: "10px 10px" }}>
+            Material Available:{" "}
+            <Icon path={mdiCheck} size="15px" className={classes.active} />
+          </div>
+          <div>Auftragsmenge produced: 195</div>
         </Box>
       </div>
       <div key="schedule3">
-        {" "}
         <Box textAlign="center" className={classes.gridBorder}>
-          Schedule for machine 3
+          <div style={{ paddingBottom: "10px" }}>Machine 3_XXX</div>
+          <div>
+            <ProgressBar>
+              <ProgressBar
+                striped
+                variant="warning"
+                now={20}
+                label={`${2} hr`}
+                key={1}
+              />
+              <ProgressBar
+                striped
+                variant="success"
+                now={40}
+                label={`${17} hr`}
+                key={2}
+              />
+              <ProgressBar
+                style={{ background: "#cacaca" }}
+                now={40}
+                label={`${6} hr`}
+                key={2}
+              />
+            </ProgressBar>
+          </div>
+          <div style={{ padding: "10px 10px" }}>
+            Material Available:{" "}
+            <Icon path={mdiCheck} size="15px" className={classes.active} />
+          </div>
+          <div>Auftragsmenge produced: 195</div>
         </Box>
       </div>
       <div key="schedule4">
-        {" "}
         <Box textAlign="center" className={classes.gridBorder}>
-          Schedule for machine 4
+          <div style={{ paddingBottom: "10px" }}>Machine 4_XXX</div>
+          <div>
+            <ProgressBar>
+              <ProgressBar
+                striped
+                variant="warning"
+                now={20}
+                label={`${2} hr`}
+                key={1}
+              />
+              <ProgressBar
+                striped
+                variant="success"
+                now={40}
+                label={`${17} hr`}
+                key={2}
+              />
+              <ProgressBar
+                style={{ background: "#cacaca" }}
+                now={40}
+                label={`${6} hr`}
+                key={2}
+              />
+            </ProgressBar>
+          </div>
+          <div style={{ padding: "10px 10px" }}>
+            Material Available:{" "}
+            <Icon path={mdiCheck} size="15px" className={classes.active} />
+          </div>
+          <div>Auftragsmenge produced: 195</div>
         </Box>
       </div>
     </GridLayout>
