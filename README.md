@@ -1,3 +1,8 @@
+## Machine Shift Scheduler/Calender
+
+Create A weekly scheduler with React Responsive Grid Layout for machine shifts.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
